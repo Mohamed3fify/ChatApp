@@ -5,9 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -43,7 +39,7 @@ import com.example.chatapp.logIn.LoginActivity
 import com.example.chatapp.ui.theme.ChatAppTheme
 import com.example.chatapp.utils.ChatAuthButton
 import com.example.chatapp.utils.ChatAuthTextField
-import com.example.chatapp.utils.Toolbar
+import com.example.chatapp.utils.ChatToolbar
 import com.example.chatapp.utils.CustomDialog
 import com.example.chatapp.utils.LoadingDialog
 
@@ -75,7 +71,7 @@ fun RegisterContent(
     val confirmPasswordErrorState = remember { mutableStateOf<String?>(null) }
 
     Scaffold(topBar = {
-        Toolbar(title = "Sign Up") {
+        ChatToolbar(title = "Sign Up") {
             onFinish()
         }
     }) { paddingValues ->
@@ -88,9 +84,8 @@ fun RegisterContent(
              ,horizontalAlignment = Alignment.CenterHorizontally
         )
         {
-            Spacer(modifier = Modifier.fillMaxHeight(0.10F)) // Add padding below ChatToolbar
 
-            Spacer(Modifier.fillMaxHeight(0.25F))
+            Spacer(Modifier.fillMaxHeight(0.35F))
 
                 ChatAuthTextField(
                     state = viewModel.firstNameState,

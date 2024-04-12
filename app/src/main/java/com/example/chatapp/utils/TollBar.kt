@@ -28,7 +28,7 @@ import com.example.chatapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Toolbar(title: String, onNavigationIconClick: (() -> Unit)? = null) {
+fun ChatToolbar(title: String, onNavigationIconClick: (() -> Unit)? = null) {
     TopAppBar(title = {
         Box(
             modifier = Modifier
@@ -43,7 +43,7 @@ fun Toolbar(title: String, onNavigationIconClick: (() -> Unit)? = null) {
                 text = title,
                 fontSize = 25.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.Black,
+                color = Color.White,
             )
         }
     }, navigationIcon = {
@@ -72,5 +72,5 @@ fun Toolbar(title: String, onNavigationIconClick: (() -> Unit)? = null) {
 @Preview
 @Composable
 fun ChatToolbarPreview() {
-    Toolbar(title = "login")
+    ChatToolbar(title = "login")
 }

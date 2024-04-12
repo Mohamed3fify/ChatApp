@@ -102,7 +102,7 @@ fun PasswordVisibilityToggle(
             if (isPasswordVisible) painterResource(id = R.drawable.key)
             else painterResource(id = R.drawable.key_off),
             contentDescription = if (isPasswordVisible) "Hide Password" else "Show Password",
-            tint = Color.White
+            tint = Color.Black
         )
     }
 }

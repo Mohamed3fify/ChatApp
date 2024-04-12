@@ -3,4 +3,9 @@
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_activity_register">Register</string>
     <string name="title_activity_login">Login</string>
+    <string name="chat_app">Chat App</string>
+    <string name="room_category_image">Room Category</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_add_room">addRoomActivity</string>
+    <string name="icon_add_room">icon add</string>
 </resources>

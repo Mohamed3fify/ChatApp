@@ -4,9 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -14,7 +11,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
@@ -41,7 +37,7 @@ import com.example.chatapp.ui.theme.ChatAppTheme
 import com.example.chatapp.utils.ChatAuthButton
 import com.example.chatapp.utils.ChatAuthTextField
 import com.example.chatapp.utils.LoadingDialog
-import com.example.chatapp.utils.Toolbar
+import com.example.chatapp.utils.ChatToolbar
 
 class LoginActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,7 +56,7 @@ class LoginActivity : ComponentActivity() {
 fun loginContent(viewModel: LoginViewModel = viewModel(), onFinish: () -> Unit) {
 
     Scaffold(topBar = {
-        Toolbar(title = "log in")
+        ChatToolbar(title = "log in")
 
     })
     { paddingValues ->
@@ -74,15 +70,12 @@ fun loginContent(viewModel: LoginViewModel = viewModel(), onFinish: () -> Unit) 
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            Spacer(modifier = Modifier.fillMaxHeight(0.15F)) // Add padding below ChatToolbar
-
-
-            Spacer(modifier = Modifier.fillMaxHeight(0.20F))
+            Spacer(modifier = Modifier.fillMaxHeight(0.40F))
             Text(
                 text = "Welcome",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.White,
+                color = Color.Black,
                 modifier = Modifier
                     .align(Alignment.Start)
                     .padding(horizontal = 25.dp)

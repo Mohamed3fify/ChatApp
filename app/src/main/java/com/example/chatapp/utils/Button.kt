@@ -42,7 +42,7 @@ fun ChatAuthButton(
         shape = RoundedCornerShape(6.dp),
         colors = ButtonDefaults.buttonColors(
             containerColor = if (isEnabled) Color.Blue else Color.White,
-            contentColor = if (isEnabled) Color.Black else Color.White
+            contentColor = if (isEnabled) Color.White else Color.White
         )
     ) {
         Text(text = title, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
