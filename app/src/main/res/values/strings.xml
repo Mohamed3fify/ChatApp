@@ -8,4 +8,12 @@
     <string name="title_activity_chat">ChatActivity</string>
     <string name="title_activity_add_room">addRoomActivity</string>
     <string name="icon_add_room">icon add</string>
+    <string name="create_new_room">Create New Room\n</string>
+    <string name="add_room_image">add room\n</string>
+    <string name="room_name">Room Name</string>
+    <string name="room_desc">Room Descrption\n</string>
+    <string name="create">Create</string>
+    <string name="icon_send_a_message">send</string>
+    <string name="category_image">Category image\n</string>
+    <string name="selected_category_image">Selected Category image</string>
 </resources>

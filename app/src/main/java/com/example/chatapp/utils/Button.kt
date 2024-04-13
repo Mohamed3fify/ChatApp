@@ -1,9 +1,13 @@
 package com.example.chatapp.utils
 
+import android.content.DialogInterface.OnClickListener
+import androidx.compose.foundation.Image
 import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -11,11 +15,15 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.chatapp.R
+import com.example.chatapp.ui.theme.main_chat
 
 
 @Composable
@@ -33,7 +41,7 @@ fun ChatAuthButton(
                     6.dp
                 ),
                 elevation = 5.dp,
-                ambientColor = Color.Blue,
+                ambientColor = main_chat,
             ),
         onClick = {
             onClick()
@@ -41,7 +49,7 @@ fun ChatAuthButton(
         contentPadding = PaddingValues(horizontal = 36.dp, vertical = 18.dp),
         shape = RoundedCornerShape(6.dp),
         colors = ButtonDefaults.buttonColors(
-            containerColor = if (isEnabled) Color.Blue else Color.White,
+            containerColor = if (isEnabled) main_chat else Color.White,
             contentColor = if (isEnabled) Color.White else Color.White
         )
     ) {
@@ -52,17 +60,34 @@ fun ChatAuthButton(
 }
 
 @Composable
-fun CreateButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
+fun CreateButton(modifier: Modifier = Modifier,onClickListener: () -> Unit) {
     Button(
-        onClick = { onClick() },
-        modifier = modifier,
-        colors = ButtonDefaults.buttonColors(containerColor = Color.Blue, contentColor = Color.Black)
+        modifier = modifier.fillMaxWidth(.8F),
+        onClick = { onClickListener() },
+        colors = ButtonDefaults.buttonColors(containerColor = main_chat, contentColor = Color.Black),
+        shape = CircleShape
     ) {
         Text(
-            text = "Create",
+            text = stringResource(R.string.create),
             fontSize = 16.sp,
             fontWeight = FontWeight.Medium,
             color = Color.White,
+        )
+    }
+}
+
+@Composable
+fun SendButton(onClickListener: () -> Unit) {
+    Button(
+        shape = RoundedCornerShape(4.dp),
+        colors = ButtonDefaults.buttonColors(containerColor = main_chat, contentColor = Color.White),
+        onClick = { onClickListener() }) {
+        Text(text = stringResource(R.string.icon_send_a_message))
+        Spacer(modifier = Modifier.width(8.dp))
+        Image(
+            painter = painterResource(id = R.drawable.send), contentDescription = stringResource(
+                R.string.icon_send_a_message
+            )
         )
     }
 }

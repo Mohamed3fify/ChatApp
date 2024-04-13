@@ -5,7 +5,7 @@ import android.util.Patterns
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.chatapp.FirebaseUtils
+import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.model.AppUser
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.ktx.auth

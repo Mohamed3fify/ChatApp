@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.chatapp.FirebaseUtils
+import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.model.Room
 
 class HomeViewModel : ViewModel(){

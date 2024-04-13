@@ -39,12 +39,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.chatapp.Constants
 import com.example.chatapp.addRoom.AddRoomActivity
 import com.example.chatapp.chat.ChatActivity
 import com.example.chatapp.model.Category
 import com.example.chatapp.model.Room
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.chatapp.ui.theme.main_chat
 
 class HomeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,7 +67,7 @@ fun HomeContent(viewModel: HomeViewModel = viewModel()) {
                     viewModel.navigateToAddRoomScreen()
                 },
                 shape = CircleShape,
-                containerColor = Color.Blue,
+                containerColor = main_chat,
                 modifier = Modifier.size(60.dp)
             ) {
                 Image(

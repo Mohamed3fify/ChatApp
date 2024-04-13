@@ -3,7 +3,7 @@ package com.example.chatapp.logIn
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.chatapp.FirebaseUtils
+import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.model.AppUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase

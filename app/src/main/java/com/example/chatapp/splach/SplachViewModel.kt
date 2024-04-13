@@ -3,7 +3,7 @@ package com.example.drchat.splach
 import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.chatapp.FirebaseUtils
+import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.splach.SplachEvent
 import com.example.chatapp.model.AppUser
 import com.google.firebase.auth.ktx.auth

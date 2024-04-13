@@ -67,9 +67,6 @@ fun RegisterContent(
     // new
     val accountAlreadyExists by viewModel.accountAlreadyExists.collectAsState()
 
-    val confirmPasswordState = remember { mutableStateOf("") }
-    val confirmPasswordErrorState = remember { mutableStateOf<String?>(null) }
-
     Scaffold(topBar = {
         ChatToolbar(title = "Sign Up") {
             onFinish()

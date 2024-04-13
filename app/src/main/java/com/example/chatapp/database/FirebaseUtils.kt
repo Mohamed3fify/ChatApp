@@ -1,4 +1,4 @@
-package com.example.chatapp
+package com.example.chatapp.database
 
 import com.example.chatapp.model.AppUser
 import com.example.chatapp.model.Room

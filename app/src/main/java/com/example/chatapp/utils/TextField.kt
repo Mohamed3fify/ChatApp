@@ -33,7 +33,7 @@ fun ChatAuthTextField(
     ) {
     var passwordVisible by remember { mutableStateOf(false) }
 
-    Column(modifier = Modifier.fillMaxWidth(0.9F)) {
+    Column(modifier = modifier.fillMaxWidth(0.9F)) {
 
 
         OutlinedTextField(
