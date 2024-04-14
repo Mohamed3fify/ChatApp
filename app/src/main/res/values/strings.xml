@@ -16,4 +16,5 @@
     <string name="icon_send_a_message">send</string>
     <string name="category_image">Category image\n</string>
     <string name="selected_category_image">Selected Category image</string>
+    <string name="type_a_message">message</string>
 </resources>

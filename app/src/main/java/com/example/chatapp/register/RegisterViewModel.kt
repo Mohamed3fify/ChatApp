@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.model.AppUser
+import com.example.chatapp.model.DataUtils
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -59,7 +60,8 @@ class RegisterViewModel : ViewModel() {
         val user = AppUser(uid, firstNameState.value, emailState.value)
         FirebaseUtils.addUser(user, onSuccessListener = {
             isLoading.value = false
-            // events.value = RegisterEvent.NavigateToChatBot(user)  , // to navigate to chat bot after create the account
+            DataUtils.appUser = user
+            // events.value = RegisterEvent.NavigateToHome(user)  , // to navigate to Home after create the account
             events.value = RegisterEvent.NavigateToLogin   // , to navigate to login after create the account
         }, onFailureListener = {
             isLoading.value = false

@@ -44,6 +44,8 @@ import com.example.chatapp.chat.ChatActivity
 import com.example.chatapp.model.Category
 import com.example.chatapp.model.Room
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.chatapp.logIn.LoginActivity
+import com.example.chatapp.model.Constants
 import com.example.chatapp.ui.theme.main_chat
 
 class HomeActivity : ComponentActivity() {
@@ -59,7 +61,7 @@ class HomeActivity : ComponentActivity() {
 fun HomeContent(viewModel: HomeViewModel = viewModel()) {
     Scaffold(
         topBar = {
-            ChatToolbar(title = stringResource(R.string.chat_app))
+            ChatToolbar(title = stringResource(R.string.chat_app),)
         },
         floatingActionButton = {
             FloatingActionButton(
@@ -94,6 +96,7 @@ fun HomeContent(viewModel: HomeViewModel = viewModel()) {
             RoomsLazyGrid()
         }
     }
+
     TriggerEvent(event = viewModel.event.value)
 }
 
@@ -163,11 +166,12 @@ fun TriggerEvent(
 
         is HomeEvent.NavigateToChatScreen -> {
             val intent = Intent(context, ChatActivity::class.java)
-            // Parcelable
-           // intent.putExtra(Constants.ROOM_KEY, event.room)
+
+            intent.putExtra(Constants.ROOM_KEY, event.room)
             context.startActivity(intent)
             viewModel.resetEventState()
         }
+
     }
 }
 

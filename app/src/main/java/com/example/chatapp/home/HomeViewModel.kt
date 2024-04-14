@@ -6,12 +6,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.model.Room
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeViewModel : ViewModel(){
     val event = mutableStateOf<HomeEvent>(HomeEvent.Idle)
     val isLoading = mutableStateOf(false)
     val roomsList = mutableStateListOf<Room>()
-
 
     fun getRoomsFromFirestore() {
         isLoading.value = true
@@ -38,4 +38,7 @@ class HomeViewModel : ViewModel(){
     fun resetEventState() {
         event.value = HomeEvent.Idle
     }
+
+
+
 }

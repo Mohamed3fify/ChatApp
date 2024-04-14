@@ -5,6 +5,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.chatapp.database.FirebaseUtils
 import com.example.chatapp.model.AppUser
+import com.example.chatapp.model.DataUtils
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
@@ -50,6 +51,7 @@ class LoginViewModel : ViewModel() {
             isLoading.value = false
             loginSuccess.value = true
             val user = documentSnapshot.toObject(AppUser::class.java)
+            DataUtils.appUser = user
             navigateToHome(user!!)
         }, onFailureListener = {
             isLoading.value = false

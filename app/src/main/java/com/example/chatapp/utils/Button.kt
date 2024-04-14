@@ -79,7 +79,7 @@ fun CreateButton(modifier: Modifier = Modifier,onClickListener: () -> Unit) {
 @Composable
 fun SendButton(onClickListener: () -> Unit) {
     Button(
-        shape = RoundedCornerShape(4.dp),
+        shape = RoundedCornerShape(16.dp),
         colors = ButtonDefaults.buttonColors(containerColor = main_chat, contentColor = Color.White),
         onClick = { onClickListener() }) {
         Text(text = stringResource(R.string.icon_send_a_message))

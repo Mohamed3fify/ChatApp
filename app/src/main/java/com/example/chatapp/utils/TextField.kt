@@ -3,7 +3,9 @@ package com.example.chatapp.utils
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
@@ -13,11 +15,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.chatapp.R
 
@@ -88,6 +93,29 @@ fun ChatAuthTextField(
 }
 
 @Composable
+fun ChatInputTextField(
+    modifier: Modifier = Modifier,
+    state: MutableState<String>
+) {
+    OutlinedTextField(
+        value = state.value,
+        onValueChange = {
+            state.value = it
+        },
+        colors = TextFieldDefaults.colors(
+            unfocusedContainerColor = Color.Transparent,
+            focusedContainerColor = Color.Transparent,
+            unfocusedIndicatorColor = Color.Gray,
+            focusedIndicatorColor = Color.Gray
+        ),
+        shape = RoundedCornerShape(topEnd = 20.dp),
+        placeholder = {
+            Text(text = stringResource(R.string.type_a_message))
+        }
+
+    )
+}
+@Composable
 fun PasswordVisibilityToggle(
     isPasswordVisible: Boolean,
     onToggleClick: () -> Unit,
@@ -107,7 +135,14 @@ fun PasswordVisibilityToggle(
     }
 }
 
-
+@Preview(showBackground = true , showSystemUi = true)
+@Composable
+private fun ChatInputPreview() {
+    val variable = remember {
+        mutableStateOf("")
+    }
+    ChatInputTextField(state = variable)
+}
 
 
 
